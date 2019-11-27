@@ -1,2 +1,0 @@
-#include "../common.xcconfig"
-#include "../../Pods/Target Support Files/Pods-MEWconnect-MyEtherWallet-iOS/Pods-MEWconnect-MyEtherWallet-iOS.debug.xcconfig"
