@@ -14,6 +14,7 @@ import { AuthGuard } from './auth.guard';
 import { TokenInterceptorService } from './token-interceptor.service';
 import { EventService } from './event.service';
 import { TransactionsComponent } from './transactions/transactions.component';
+import { GasPricesComponent } from './gas-prices/gas-prices.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { TransactionsComponent } from './transactions/transactions.component';
     RegisterComponent,
     LoginComponent,
     EventsComponent,
-    TransactionsComponent
+    TransactionsComponent,
+    GasPricesComponent
   ],
   imports: [
     BrowserModule,

@@ -10,6 +10,9 @@
         <a class="nav-link" *ngIf="_authService.loggedIn()" routerLink="/events" routerLinkActive="active">Currencies</a>
       </li>
       <li class="nav-item">
+        <a class="nav-link" *ngIf="_authService.loggedIn()" routerLink="/gas-prices" routerLinkActive="active">Gas Prices</a>
+      </li>
+      <li class="nav-item">
         <a class="nav-link" *ngIf="_authService.loggedIn()" routerLink="/transactions" routerLinkActive="active">Transactions</a>
       </li>
     </ul>
