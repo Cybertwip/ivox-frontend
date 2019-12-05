@@ -20,7 +20,7 @@
                             <td>{{gasPrice.price | currency}}</td>
                             <td>
                                 <div style="width: 110px">
-                                    <button type="button" class="btn btn-warning" data-toggle="modal" [attr.data-target]="'#modal-' + currency.name">
+                                    <button type="button" class="btn btn-warning" data-toggle="modal" [attr.data-target]="'#modal-' + gasPrice.name">
                                         Edit
                                     </button>
                                     <!-- Modal -->
@@ -49,7 +49,7 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <button type="button" class="btn btn-danger" data-toggle="modal" [attr.data-target]="'#deleteModal-' + currency.name">Del</button>
+                                    <button type="button" class="btn btn-danger" data-toggle="modal" [attr.data-target]="'#deleteModal-' + gasPrice.name">Del</button>
                                                                         
                                     <!-- Modal -->
                                     <div class="modal fade" id="{{ 'deleteModal-' + gasPrice.name }}" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
