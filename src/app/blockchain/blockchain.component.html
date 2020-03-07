@@ -1,0 +1,106 @@
+<div>
+    <div class="row">
+        <div class="col">
+            <h1 style="margin: 20px 0"></h1>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <table class="table table-responsive table-hover w-100 d-block d-md-table">
+                <thead>
+                <tr>
+                    <th>Title</th>
+                    <th>Description</th>
+                    <th>Approval</th>
+                    <th>Disapproval</th>
+                    <th>Proposed</th>
+                    <th>Expiration</th>
+                </tr>
+                </thead>
+                <tbody>
+                    <ng-container *ngFor="let proposal of proposals">
+                        <tr id="{{proposal.id}}">
+                            <td>{{proposal.title}}</td>
+                            <td>{{proposal.description}}</td>
+                            <td>{{proposal.approval}}</td>
+                            <td>{{proposal.disapproval}}</td>
+                            <td>{{proposal.proposed}}</td>
+                            <td>{{proposal.expiration}}</td>
+                            <td>
+                                <div style="width: 110px">
+                                    <button type="button" class="btn btn-warning" data-toggle="modal" [attr.data-target]="'#modal-' + proposal.id">
+                                        Edit
+                                    </button>
+                                    <!-- Modal -->
+                                    <div class="modal fade" id="{{ 'modal-' + proposal.id }}" tabindex="-1" role="dialog" aria-labelledby="editModalLabel" aria-hidden="true">
+                                        <div class="modal-dialog" role="document">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <h5 class="modal-title" id="editModalLabel">Edit Proposal</h5>
+                                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                    <span aria-hidden="true">&times;</span>
+                                                    </button>
+                                                </div>
+                                                <div class="modal-body">
+                                                    <form #editForm="ngForm">
+                                                        <div class="form-group">
+                                                            <label for="id">Id</label>
+                                                            <input type="text" name="id" class="form-control" id="id" [ngModel]="proposal.id">
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label for="title">Title</label>
+                                                            <input type="text" name="title" class="form-control" id="title" [ngModel]="proposal.title">
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label for="description">Description</label>
+                                                            <input type="text" name="description" class="form-control" id="description" [ngModel]="proposal.description">
+                                                        </div>
+                                                        <button type="button" (click)='editProposal(editForm.value)' data-dismiss="modal" class="btn btn-primary">Submit</button>
+                                                    </form>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                    </ng-container>
+                </tbody>
+            </table>
+
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <button type="button" class="btn btn-success" data-toggle="modal" [attr.data-target]="'#addModal'">
+                    Add
+                </button>
+                <!-- Modal -->
+            <div class="modal fade" id="{{ 'addModal' }}" tabindex="-1" role="dialog" aria-labelledby="addModalLabel" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="addModalLabel">Add Proposal</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <form #addForm="ngForm">
+                                <div class="form-group">
+                                    <label for="title">Title</label>
+                                    <input type="text" name="title" class="form-control" id="title" ngModel>
+                                </div>
+                                <div class="form-group">
+                                    <label for="description">Description</label>
+                                    <input type="text" name="description" class="form-control" id="description" ngModel>
+                                </div>
+                                <button type="button" (click)='addProposal(addForm.value)' data-dismiss="modal" class="btn btn-primary">Submit</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -15,6 +15,10 @@
       <li class="nav-item">
         <a class="nav-link" *ngIf="_authService.loggedIn()" routerLink="/transactions" routerLinkActive="active">Transactions</a>
       </li>
+      <li class="nav-item">
+        <a class="nav-link" *ngIf="_authService.loggedIn()" routerLink="/proposals" routerLinkActive="active">Proposals</a>
+      </li>
+
     </ul>
     <ul class="navbar-nav">
         <a class="nav-link" *ngIf="!_authService.loggedIn()" routerLink="/login" routerLinkActive="active">Login</a>

@@ -15,6 +15,7 @@ import { TokenInterceptorService } from './token-interceptor.service';
 import { EventService } from './event.service';
 import { TransactionsComponent } from './transactions/transactions.component';
 import { GasPricesComponent } from './gas-prices/gas-prices.component';
+import { BlockchainComponent } from './blockchain/blockchain.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { GasPricesComponent } from './gas-prices/gas-prices.component';
     LoginComponent,
     EventsComponent,
     TransactionsComponent,
-    GasPricesComponent
+    GasPricesComponent,
+    BlockchainComponent
   ],
   imports: [
     BrowserModule,

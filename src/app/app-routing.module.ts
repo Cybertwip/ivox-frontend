@@ -4,6 +4,7 @@ import { RegisterComponent } from './register/register.component';
 import { LoginComponent } from './login/login.component';
 import { GasPricesComponent } from './gas-prices/gas-prices.component';
 import { EventsComponent } from './events/events.component';
+import { BlockchainComponent } from './blockchain/blockchain.component';
 import { AuthGuard } from './auth.guard';
 import { TransactionsComponent } from './transactions/transactions.component';
 
@@ -27,6 +28,11 @@ const routes: Routes = [
   {
     path: 'transactions',
     component: TransactionsComponent,
+    canActivate: [AuthGuard]
+  },
+  {
+    path: 'proposals',
+    component: BlockchainComponent,
     canActivate: [AuthGuard]
   },
   {
